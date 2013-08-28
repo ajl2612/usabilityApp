@@ -4,7 +4,7 @@
 
 ###Summary
 
-Our app does this. It also does that.
+Our app does this... It also does that.
 
 ###Scope
 It will not do this….or that.
