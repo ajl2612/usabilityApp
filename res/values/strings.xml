@@ -4,5 +4,9 @@
     <string name="app_name">usabilityApp</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_exercise">ExerciseActivity</string>
+    <string name="title_activity_goals">GoalsActivity</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 
 </resources>

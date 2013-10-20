@@ -22,6 +22,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.usabilityapp.ExerciseActivity"
+            android:label="@string/title_activity_exercise" >
+        </activity>
+        <activity
+            android:name="com.example.usabilityapp.GoalsActivity"
+            android:label="@string/title_activity_goals" >
+        </activity>
+        <activity
+            android:name="com.example.usabilityapp.ScheduleActivity"
+            android:label="@string/title_activity_schedule"
+            android:parentActivityName="com.example.usabilityapp.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usabilityapp.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.usabilityapp.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.example.usabilityapp.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usabilityapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
