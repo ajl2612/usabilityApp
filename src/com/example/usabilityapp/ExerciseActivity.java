@@ -41,4 +41,17 @@ public class ExerciseActivity extends Activity {
 		Intent intent = new Intent(this, CreateExerciseActivity.class);
 		startActivity(intent);
 	}
+    
+	public void deleteExercise(View view){
+		final ListView lv1 = (ListView) findViewById(R.id.custom_exercise_list);
+		final int position = lv1.getPositionForView((View) view.getParent());
+		Object o = lv1.getAdapter().getItem(position);
+		Exercise exercise = (Exercise) o;
+		datasource = new ExerciseDataSource(this);
+		datasource.open();
+		datasource.deleteExercise(exercise.getId());
+		startActivity(getIntent());
+		finish();
+	}
+	
 }

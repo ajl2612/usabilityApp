@@ -33,6 +33,14 @@
         android:text=""
         android:textColor="#343434"
         android:textSize="20sp" />
-   
+
+	<Button
+	    android:id="@+id/deleteExerciseButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignBottom="@+id/nameCol"
+	    android:layout_alignRight="@+id/typeCol"
+	    android:text="Delete" 
+	    android:onClick="deleteExercise"/>
 	
 </RelativeLayout>
