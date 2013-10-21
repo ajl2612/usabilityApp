@@ -46,6 +46,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.usabilityapp.MainActivity" />
         </activity>
+        <activity
+            android:name="com.example.usabilityapp.CreateExerciseActivity"
+            android:label="@string/title_activity_create_exercise" >
+        </activity>
     </application>
 
 </manifest>

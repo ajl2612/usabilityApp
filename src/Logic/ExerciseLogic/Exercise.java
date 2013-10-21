@@ -1,23 +1,23 @@
 package Logic.ExerciseLogic;
 
 public class Exercise {
-	private long id;
+	private int id;
 	private String name;
 	private String type;
 
 	public Exercise(){}
 	
-	public Exercise(long i, String n, String t){
+	public Exercise(int i, String n, String t){
 		this.id = i;
 		this.name = n;
 		this.type = t;
 	}
 
-	public long getId(){
+	public int getId(){
 		return this.id;
 	}
 	
-	public void setId(long id){
+	public void setId(int id){
 		this.id = id;
 	}
 	

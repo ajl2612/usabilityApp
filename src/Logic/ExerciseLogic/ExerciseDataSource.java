@@ -19,9 +19,9 @@ public class ExerciseDataSource {
   private ExerciseDbHelper dbHelper;
   
   private String[] allColumns = { 
-		 ExerciseEntry._ID,
-		 ExerciseEntry.COLUMN_NAME_EXERCISE_NAME,
-		 ExerciseEntry.COLUMN_NAME_TYPE
+		 ExerciseEntry.EXERCISE_ID,
+		 ExerciseEntry.EXERCISE_NAME,
+		 ExerciseEntry.EXERCISE_TYPE
   };
 
   public ExerciseDataSource(Context context) {
@@ -35,17 +35,18 @@ public class ExerciseDataSource {
   public void close() {
     dbHelper.close();
   }
+  
 
   public Exercise createExercise(String name, String type ) {
     ContentValues values = new ContentValues();
-    values.put(ExerciseEntry.COLUMN_NAME_EXERCISE_NAME, name);
-    values.put(ExerciseEntry.COLUMN_NAME_TYPE, type);
-    
+    values.put(ExerciseEntry.EXERCISE_NAME, name);
+    values.put(ExerciseEntry.EXERCISE_TYPE, type);
+     
     long insertId = database.insert(ExerciseEntry.TABLE_NAME, null,
         values);
     
     Cursor cursor = database.query(ExerciseEntry.TABLE_NAME,
-        allColumns, ExerciseEntry.COLUMN_NAME_EXERCISE_ID + " = " + insertId, null,
+        allColumns, ExerciseEntry.EXERCISE_ID + " = " + insertId, null,
         null, null, null);
     
     cursor.moveToFirst();
@@ -56,12 +57,12 @@ public class ExerciseDataSource {
 
   public Exercise updateExercise(long id,String name, String type){
 	  ContentValues values = new ContentValues();
-	    values.put(ExerciseEntry.COLUMN_NAME_EXERCISE_NAME, name);
-	    values.put(ExerciseEntry.COLUMN_NAME_TYPE, type);
+	    values.put(ExerciseEntry.EXERCISE_NAME, name);
+	    values.put(ExerciseEntry.EXERCISE_TYPE, type);
 	    
-	  database.update(ExerciseEntry.TABLE_NAME, values, ExerciseEntry.COLUMN_NAME_EXERCISE_ID + " = " + id, null);
+	  database.update(ExerciseEntry.TABLE_NAME, values, ExerciseEntry.EXERCISE_ID + " = " + id, null);
 	  Cursor cursor = database.query(ExerciseEntry.TABLE_NAME,
-	            allColumns, ExerciseEntry.COLUMN_NAME_EXERCISE_ID + " = " + id, null,
+	            allColumns, ExerciseEntry.EXERCISE_ID + " = " + id, null,
 	            null, null, null);
 	  
 	  cursor.moveToFirst();
@@ -71,7 +72,7 @@ public class ExerciseDataSource {
   }
   
   public void deleteExercise(long id) {
-    database.delete(ExerciseEntry.TABLE_NAME, ExerciseEntry.COLUMN_NAME_EXERCISE_ID
+    database.delete(ExerciseEntry.TABLE_NAME, ExerciseEntry.EXERCISE_ID
         + " = " + id, null);
   }
 
@@ -79,6 +80,7 @@ public class ExerciseDataSource {
     ArrayList<Exercise> Exercises = new ArrayList<Exercise>();
     Cursor cursor = database.query(ExerciseEntry.TABLE_NAME,
         allColumns, null, null, null, null, null);
+    System.out.println("error is in getAll");
     cursor.moveToFirst();
     while (!cursor.isAfterLast()) {
       Exercise Exercise = cursorToExercise(cursor);
@@ -91,7 +93,7 @@ public class ExerciseDataSource {
   
   private Exercise cursorToExercise(Cursor cursor) {
     Exercise Exercise = new Exercise();
-    Exercise.setId(cursor.getLong(0));
+    Exercise.setId(cursor.getInt(0));
     Exercise.setName(cursor.getString(1));
     Exercise.setType(cursor.getString(2));
     return Exercise;

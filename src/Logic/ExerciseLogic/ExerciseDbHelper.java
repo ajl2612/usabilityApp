@@ -20,4 +20,5 @@ public class ExerciseDbHelper extends SQLiteOpenHelper{
 		db.execSQL(ExerciseReaderContract.SQL_DELETE_ENTRIES);
 		onCreate(db);
 	}
+
 }
