@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.example.usabilityapp.R;
 import Logic.ExerciseLogic.Exercise;
 import Logic.ExerciseLogic.ExerciseDataSource;
-import Logic.ExerciseLogic.ExerciseDbHelper;
+import Logic.Main.MainDbHelper;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -17,7 +17,7 @@ import android.widget.ListView;
 public class ExerciseActivity extends Activity {
 	Button exerciseButton;
 	private ExerciseDataSource datasource;
-	private ExerciseDbHelper helper = new ExerciseDbHelper(this);
+	private MainDbHelper helper = new MainDbHelper(this);
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {

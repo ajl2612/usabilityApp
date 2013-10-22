@@ -50,6 +50,14 @@
             android:name="com.example.usabilityapp.CreateExerciseActivity"
             android:label="@string/title_activity_create_exercise" >
         </activity>
+        <activity
+            android:name="com.example.usabilityapp.WorkoutActivity"
+            android:label="@string/title_activity_workout" >
+        </activity>
+        <activity
+            android:name="com.example.usabilityapp.CreateWorkoutActivity"
+            android:label="@string/title_activity_create_workout" >
+        </activity>
     </application>
 
 </manifest>

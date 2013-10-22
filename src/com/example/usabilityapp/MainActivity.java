@@ -40,5 +40,9 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(this, ScheduleActivity.class);
 		startActivity(intent);
 	}
+	public void gotoWorkout(View view){
+		Intent intent = new Intent(this, WorkoutActivity.class);
+		startActivity(intent);
+	}
 
 }

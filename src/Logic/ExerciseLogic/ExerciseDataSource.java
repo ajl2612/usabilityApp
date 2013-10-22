@@ -2,9 +2,8 @@ package Logic.ExerciseLogic;
 
 import java.util.ArrayList;
 
-
-
 import Logic.ExerciseLogic.ExerciseReaderContract.ExerciseEntry;
+import Logic.Main.MainDbHelper;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,7 +15,7 @@ public class ExerciseDataSource {
   // Database fields
 	
   private SQLiteDatabase database;
-  private ExerciseDbHelper dbHelper;
+  private MainDbHelper dbHelper;
   
   private String[] allColumns = { 
 		 ExerciseEntry.EXERCISE_ID,
@@ -25,7 +24,7 @@ public class ExerciseDataSource {
   };
 
   public ExerciseDataSource(Context context) {
-    dbHelper = new ExerciseDbHelper(context);
+    dbHelper = new MainDbHelper(context);
   }
 
   public void open() throws SQLException {
@@ -74,6 +73,22 @@ public class ExerciseDataSource {
   public void deleteExercise(long id) {
     database.delete(ExerciseEntry.TABLE_NAME, ExerciseEntry.EXERCISE_ID
         + " = " + id, null);
+  }
+  
+  public Exercise getExercise(int id){
+	    Cursor cursor = database.query(
+	    		ExerciseEntry.TABLE_NAME, 
+	    		allColumns, 
+	    		ExerciseEntry.EXERCISE_ID + " = " + id, 
+	    		null , 
+	    		null , 
+	    		null ,
+	    		null, 
+	    		"1");
+	    cursor.moveToFirst();
+	    Exercise exercise = cursorToExercise(cursor);
+	    cursor.close();
+	    return exercise;
   }
 
   public ArrayList<Exercise> getAllExercises() {
