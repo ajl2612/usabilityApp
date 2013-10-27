@@ -3,14 +3,18 @@ package com.example.usabilityapp;
 
 import java.util.ArrayList;
 
+import Logic.ExerciseLogic.Exercise;
 import Logic.Workout.Workout;
 import Logic.Workout.WorkoutNameDataSource;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class WorkoutActivity extends Activity {
 

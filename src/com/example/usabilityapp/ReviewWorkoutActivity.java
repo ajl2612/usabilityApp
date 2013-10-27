@@ -14,48 +14,26 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
-public class CreateWorkoutActivity extends Activity {
+public class ReviewWorkoutActivity extends Activity {
 
 	private ArrayList<Exercise> selectedExercises = new ArrayList<Exercise>();	
 	private ExerciseDataSource eDatasource;
 	private WorkoutNameDataSource nDatasource;
 	private WorkoutExerciseDataSource wDatasource;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_create_workout);
-
-		eDatasource = new ExerciseDataSource(this);
-		eDatasource.open();
+		setContentView(R.layout.activity_review_workout);
+		TextView title = (TextView) findViewById(R.id.review_workout_title);
 		
 		ArrayList<Exercise> allExercises = eDatasource.getAllExercises();
-		final ListView lv1 = (ListView) findViewById(R.id.custom_workout_exercise_list);
-		lv1.setAdapter(new CustomExerciseCheckListAdapter(this,allExercises));
-		lv1.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-
-					Exercise selected = (Exercise) (lv1.getItemAtPosition(arg2));	   
-					CustomExerciseCheckListAdapter.ViewHolder holder;
-		            holder = (CustomExerciseCheckListAdapter.ViewHolder) arg1.getTag();
-		           
-		            if(holder.nameView.isChecked() ){
-		            	holder.nameView.setChecked(false);  
-		            	selectedExercises.remove(selected);
-		            	arg1.setBackgroundColor(0);
-		            }else{
-		               	holder.nameView.setChecked(true);
-		            	selectedExercises.add(selected);
-		         	    arg1.setBackgroundColor(Color.RED);
-		            }
-			}}); 
+		final ListView lv1 = (ListView) findViewById(R.id.review_workout_exercise_list);
+		lv1.setAdapter(new CustomExerciseListAdapter(this,allExercises));
 	}
 
 	@Override
