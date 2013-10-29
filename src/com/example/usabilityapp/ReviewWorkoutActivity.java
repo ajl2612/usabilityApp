@@ -9,6 +9,7 @@ import Logic.Workout.WorkoutExerciseDataSource;
 import Logic.Workout.WorkoutNameDataSource;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -28,12 +29,27 @@ public class ReviewWorkoutActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_review_workout);
 		TextView title = (TextView) findViewById(R.id.review_workout_title);
+		Intent intent = getIntent();
+		int id = intent.getIntExtra("id", -1);
+		String name = intent.getStringExtra("name");
+		title.setText(name);
 		
-		ArrayList<Exercise> allExercises = eDatasource.getAllExercises();
-		final ListView lv1 = (ListView) findViewById(R.id.review_workout_exercise_list);
-		lv1.setAdapter(new CustomExerciseListAdapter(this,allExercises));
+		if(id > 0){
+			eDatasource = new ExerciseDataSource(this);
+	        wDatasource = new WorkoutExerciseDataSource(this);
+			eDatasource.open();
+			wDatasource.open();
+			
+			ArrayList<Integer> allExerciseIds = wDatasource.getAllExerciseIds(id);
+			System.out.println(allExerciseIds);
+			ArrayList<Exercise> allExercises = eDatasource.getAllExercisesByIds(allExerciseIds);
+			System.out.println(allExercises);
+			final ListView lv1 = (ListView) findViewById(R.id.review_workout_exercise_list);
+			lv1.setAdapter(new CustomExerciseListAdapter(this,allExercises));
+		}
 	}
 
 	@Override
@@ -43,23 +59,4 @@ public class ReviewWorkoutActivity extends Activity {
 		return true;
 	}
 	
-	public void createWorkout(View view){
-		EditText nameText = (EditText)findViewById(R.id.workoutTitleText);		
-		String name = nameText.getText().toString();
-		
-		if(!name.equals("") && selectedExercises.size() > 0){
-			nDatasource = new WorkoutNameDataSource(this);
-			wDatasource = new WorkoutExerciseDataSource(this);
-			nDatasource.open();
-			wDatasource.open();
-			
-			Workout workout = nDatasource.createWorkout(name);
-			
-			for(Exercise e: selectedExercises){
-				wDatasource.addExercise(workout.getId(), e.getId());
-			}
-		}
-
-	}
-
 }

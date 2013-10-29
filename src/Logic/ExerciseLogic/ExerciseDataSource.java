@@ -35,7 +35,6 @@ public class ExerciseDataSource {
     dbHelper.close();
   }
   
-
   public Exercise createExercise(String name, String type ) {
     ContentValues values = new ContentValues();
     values.put(ExerciseEntry.EXERCISE_NAME, name);
@@ -90,12 +89,19 @@ public class ExerciseDataSource {
 	    cursor.close();
 	    return exercise;
   }
+  
+  public ArrayList<Exercise> getAllExercisesByIds(ArrayList<Integer> ids){
+	    ArrayList<Exercise> exercises = new ArrayList<Exercise>();
+	    for(int i: ids){
+	    	exercises.add(getExercise(i));
+	    }
+	    return exercises;
+  }
 
   public ArrayList<Exercise> getAllExercises() {
     ArrayList<Exercise> Exercises = new ArrayList<Exercise>();
     Cursor cursor = database.query(ExerciseEntry.TABLE_NAME,
         allColumns, null, null, null, null, null);
-    System.out.println("error is in getAll");
     cursor.moveToFirst();
     while (!cursor.isAfterLast()) {
       Exercise Exercise = cursorToExercise(cursor);

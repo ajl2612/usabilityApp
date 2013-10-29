@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability="blocksDescendants"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
    	android:layout_marginBottom="20dip"
@@ -14,24 +15,16 @@
         android:text=""
         android:textSize="25sp"
         android:textStyle="bold"
-        android:typeface="sans" /> 
-    	
-	<TextView
-        android:id="@+id/typeCol"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/nameCol"
-        android:text=""
-        android:textColor="#343434"
-        android:textSize="20sp" />
+        android:typeface="sans" />
 
 	<Button
 	    android:id="@+id/deleteExerciseButton"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_alignBottom="@+id/nameCol"
-	    android:layout_alignRight="@+id/typeCol"
-	    android:text="Delete" 
-	    android:onClick="deleteExercise"/>
+	    android:layout_alignParentRight="true"
+	    android:layout_alignTop="@+id/workoutNameCol"
+	    android:layout_marginRight="24dp"
+	    android:onClick="deleteWorkout"
+	    android:text="Delete" />
 	
 </RelativeLayout>

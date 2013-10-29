@@ -39,8 +39,8 @@ public final class R {
         public static final int goals=0x7f08000b;
         public static final int idCol=0x7f080015;
         public static final int nameCol=0x7f080016;
-        public static final int review_workout_exercise_list=0x7f080010;
-        public static final int review_workout_title=0x7f08000f;
+        public static final int review_workout_exercise_list=0x7f08000f;
+        public static final int review_workout_title=0x7f080010;
         public static final int schedule=0x7f08000c;
         public static final int settings=0x7f08000d;
         public static final int typeCol=0x7f080014;
@@ -83,6 +83,7 @@ public final class R {
         public static final int title_activity_create_workout=0x7f050009;
         public static final int title_activity_exercise=0x7f050003;
         public static final int title_activity_goals=0x7f050004;
+        public static final int title_activity_review_workout=0x7f05000a;
         public static final int title_activity_schedule=0x7f050005;
         public static final int title_activity_settings=0x7f050006;
         public static final int title_activity_workout=0x7f050008;

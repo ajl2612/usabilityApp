@@ -11,5 +11,6 @@
     <string name="title_activity_create_exercise">CreateExerciseActivity</string>
     <string name="title_activity_workout">WorkoutActivity</string>
     <string name="title_activity_create_workout">CreateWorkout</string>
+    <string name="title_activity_review_workout">Review Workout</string>
 
 </resources>

@@ -23,16 +23,23 @@ public class WorkoutActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		System.out.println("Creating nDatasource");
         setContentView(R.layout.activity_workout);
         nDatasource = new WorkoutNameDataSource(this);
 		nDatasource.open();
-		System.out.println("Datasource has been opened");
 		ArrayList<Workout> workout_list = nDatasource.getAllWorkouts();
-		System.out.println("got all workouts and their names");
 		final ListView lv1 = (ListView) findViewById(R.id.custom_workout_list);
-		System.out.println("set up a custom exercise list");
 		lv1.setAdapter(new CustomWorkoutListAdapter(this,workout_list));
+		lv1.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+					Workout selected = (Workout) (lv1.getItemAtPosition(arg2));	 
+					Intent intent = new Intent(arg1.getContext(), ReviewWorkoutActivity.class);
+					intent.putExtra("name", selected.getName());
+					intent.putExtra("id", selected.getId());
+					startActivity(intent);
+			}
+		});
 	}
 
 	@Override

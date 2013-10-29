@@ -37,25 +37,19 @@ public class CustomWorkoutListAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent){
 		ViewHolder holder;
 		if(convertView == null){
-			convertView = layoutInflater.inflate(R.layout.exercise_list_row_layout,null);
-			
+			convertView = layoutInflater.inflate(R.layout.workout_list_row_layout,null);
 			holder = new ViewHolder();
-			holder.nameView = (TextView)convertView.findViewById(R.id.nameCol);
-			//holder.typeView = (TextView)convertView.findViewById(R.id.typeCol);
-			
+			holder.nameView = (TextView)convertView.findViewById(R.id.workoutNameCol);
 			convertView.setTag(holder);
 		}else{
 			holder = (ViewHolder)convertView.getTag();
 		}
 		holder.nameView.setText(listData.get(position).getName());
-		//holder.typeView.setText(listData.get(position).getType());
 		return convertView;
 	}
 	
 	static class ViewHolder{
-		TextView idView;
 		TextView nameView;
-		TextView typeView;
 	}
 }
  
