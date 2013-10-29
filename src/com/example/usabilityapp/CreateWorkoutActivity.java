@@ -9,6 +9,7 @@ import Logic.Workout.WorkoutExerciseDataSource;
 import Logic.Workout.WorkoutNameDataSource;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -79,6 +80,13 @@ public class CreateWorkoutActivity extends Activity {
 			
 			for(Exercise e: selectedExercises){
 				wDatasource.addExercise(workout.getId(), e.getId());
+			}
+			
+			if(workout != null){
+				Intent intent = new Intent(this, WorkoutActivity.class);
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
 			}
 		}
 

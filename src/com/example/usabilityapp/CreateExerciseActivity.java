@@ -39,6 +39,8 @@ public class CreateExerciseActivity extends Activity {
 		
 			if(exercise != null){
 				Intent intent = new Intent(this, ExerciseActivity.class);
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(intent);
 			}
 		}	
