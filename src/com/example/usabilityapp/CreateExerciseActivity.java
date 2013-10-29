@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class CreateExerciseActivity extends Activity {
 	private ExerciseDataSource datasource;
@@ -26,10 +27,10 @@ public class CreateExerciseActivity extends Activity {
 	
 	public void createExercise(View view){
 		EditText nameText = (EditText)findViewById(R.id.createNameField);
-		EditText typeText = (EditText)findViewById(R.id.createTypeField);
+		Spinner typeSpinner = (Spinner)findViewById(R.id.createTypeField);
 		
 		String name = nameText.getText().toString();
-		String type = typeText.getText().toString();
+		String type = String.valueOf(typeSpinner.getSelectedItem());
 		Exercise exercise;
 		
 		if(!name.equals("") && !type.equals("")){
@@ -39,9 +40,10 @@ public class CreateExerciseActivity extends Activity {
 		
 			if(exercise != null){
 				Intent intent = new Intent(this, ExerciseActivity.class);
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(intent);
 			}
 		}	
 	}
-
 }

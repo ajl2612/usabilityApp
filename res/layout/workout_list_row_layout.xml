@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+   	android:layout_marginBottom="20dip"
+   	android:padding="10dip"
+    >    
+    
+    <TextView
+        android:id="@+id/workoutNameCol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idCol"
+        android:text=""
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+	<Button
+	    android:id="@+id/deleteWorkoutButton"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignTop="@+id/workoutNameCol"
+	    android:layout_marginRight="24dp"
+	    android:onClick="deleteWorkout"
+	    android:text="Delete" />
+	
+</RelativeLayout>

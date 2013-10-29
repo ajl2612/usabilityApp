@@ -49,4 +49,14 @@
         android:text="Settings" 
         android:onClick="gotoSettings"/>
 
+    <Button
+        android:id="@+id/workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/exercise"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp"
+        android:text="Workouts"
+        android:onClick="gotoWorkout" />
+
 </RelativeLayout>
