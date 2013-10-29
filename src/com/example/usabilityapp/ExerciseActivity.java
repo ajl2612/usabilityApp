@@ -61,17 +61,19 @@ public class ExerciseActivity extends Activity {
 			startActivity(getIntent());
 			finish();
 		}else{
-			PopIt("Cannot Delete Exercise", "This exercise is being used by one or more exercises and cannot be deleted");
+			DeleteErrorPopIt("Cannot Delete Exercise", "This exercise is being used by one or more exercises and cannot be deleted.");
 		}
 	}
 	
-	   public void PopIt( String title, String message ){
+	// Not to be confused with the popular toy "Bop-It"
+	// This is just like a js alert or pop-up.
+	public void DeleteErrorPopIt( String title, String message ){
 	        new AlertDialog.Builder(this)
 	        .setTitle( title )
 	        .setMessage( message )
 	        .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-	            public void onClick(DialogInterface arg0, int arg1) {
-	            }
-	        }).show();
-	    }
+	        public void onClick(DialogInterface arg0, int arg1) {
+	        }
+	    }).show();
+	}
 }
