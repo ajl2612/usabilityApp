@@ -58,6 +58,23 @@ public class WorkoutExerciseDataSource {
         + " = " + id, null);
   }
   
+  public Boolean isExerciseUsed(int id){
+	    ArrayList<Integer> ids = new ArrayList<Integer>();
+	    Cursor cursor = database.query(WorkoutExerciseEntry.TABLE_NAME,
+	        allColumns, WorkoutExerciseEntry.WORKOUT_EXERCISE_ID + " = " + id, null, null, null, null);
+	    cursor.moveToFirst();
+	    while (!cursor.isAfterLast()) {
+	      ids.add(cursor.getInt(0));
+	      cursor.moveToNext();
+	    }
+	    cursor.close();
+	    if(ids.size() > 0){
+	    	return true;
+	    }
+	    return false;
+  }
+  
+  /*Gets all the exercises for a workout */
   public ArrayList<Integer> getAllExerciseIds(int workoutId) {
     ArrayList<Integer> ids = new ArrayList<Integer>();
     Cursor cursor = database.query(WorkoutExerciseEntry.TABLE_NAME,
@@ -70,4 +87,6 @@ public class WorkoutExerciseDataSource {
     cursor.close();
     return ids;
   }
+  
+  
 } 
