@@ -13,11 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:inputType="textCapSentences"
         android:text="Create Workout"
         android:textColor="#33B5E5"
         android:textSize="20sp"
    	/>
-    
     
     <ListView
         android:id="@+id/custom_workout_exercise_list"

@@ -27,7 +27,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090019;
+        public static final int action_settings=0x7f09001a;
         public static final int active_list_title=0x7f090007;
         public static final int createButton=0x7f090002;
         public static final int createNameField=0x7f090000;
@@ -37,6 +37,7 @@ public final class R {
         public static final int custom_workout_exercise_list=0x7f090004;
         public static final int custom_workout_list=0x7f090011;
         public static final int deleteExerciseButton=0x7f090017;
+        public static final int deleteWorkoutButton=0x7f090019;
         public static final int exercise=0x7f09000a;
         public static final int exerciseButton=0x7f090009;
         public static final int goals=0x7f09000b;

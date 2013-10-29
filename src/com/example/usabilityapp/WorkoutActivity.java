@@ -53,4 +53,11 @@ public class WorkoutActivity extends Activity {
 		Intent intent = new Intent(this, CreateWorkoutActivity.class);
 		startActivity(intent);
 	}
+	
+	public void deleteWorkout(){
+	//	nDatasource = new WorkoutNameDataSource(this);
+	//	nDatasource.open();
+	}
+
+
 }
