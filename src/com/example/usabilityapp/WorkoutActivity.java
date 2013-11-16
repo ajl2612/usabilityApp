@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import Logic.ExerciseLogic.Exercise;
 import Logic.Workout.Workout;
+import Logic.Workout.WorkoutExerciseDataSource;
 import Logic.Workout.WorkoutNameDataSource;
 import android.os.Bundle;
 import android.app.Activity;
@@ -19,6 +20,7 @@ import android.widget.AdapterView.OnItemClickListener;
 public class WorkoutActivity extends Activity {
 
 	private WorkoutNameDataSource nDatasource;
+	private WorkoutExerciseDataSource eDatasource;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +56,23 @@ public class WorkoutActivity extends Activity {
 		startActivity(intent);
 	}
 	
-	public void deleteWorkout(){
-	//	nDatasource = new WorkoutNameDataSource(this);
-	//	nDatasource.open();
+	public void deleteWorkout(View view){
+		eDatasource = new WorkoutExerciseDataSource(this);
+		nDatasource = new WorkoutNameDataSource(this);
+		eDatasource.open();
+		nDatasource.open();
+		
+		final ListView lv1 = (ListView) findViewById(R.id.custom_workout_list);
+		final int position = lv1.getPositionForView((View) view.getParent());
+		Object o = lv1.getAdapter().getItem(position);
+		Workout workout = (Workout) o;
+		int wId = workout.getId();
+		
+		eDatasource.deleteWorkout(wId);
+		nDatasource.deleteWorkout(wId);
+	
+		startActivity(getIntent());
+		finish();
 	}
 
 

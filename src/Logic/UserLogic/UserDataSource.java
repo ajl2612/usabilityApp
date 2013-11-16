@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 
-import Logic.ExerciseLogic.ExerciseDbHelper;
+//import Logic.ExerciseLogic.ExerciseDbHelper;
 import Logic.ExerciseLogic.ExerciseReaderContract.ExerciseEntry;
 import Logic.UserLogic.UserReaderContract.UserEntry;
 import android.database.Cursor;
@@ -18,7 +18,7 @@ public class UserDataSource {
   // Database fields
 	
   private SQLiteDatabase database;
-  private ExerciseDbHelper dbHelper;
+  //private ExerciseDbHelper dbHelper;
   
   private String[] allColumns = { 
 		 ExerciseEntry.EXERCISE_ID,
@@ -27,15 +27,15 @@ public class UserDataSource {
   };
 
   public UserDataSource(Context context) {
-    dbHelper = new ExerciseDbHelper(context);
+ //   dbHelper = new ExerciseDbHelper(context);
   }
 
   public void open() throws SQLException {
-    database = dbHelper.getWritableDatabase();
+   // database = dbHelper.getWritableDatabase();
   }
 
   public void close() {
-    dbHelper.close();
+  //  dbHelper.close();
   }
   
 

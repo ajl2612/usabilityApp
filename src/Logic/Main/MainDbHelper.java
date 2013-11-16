@@ -1,6 +1,7 @@
 package Logic.Main;
 
 import Logic.ExerciseLogic.ExerciseReaderContract;
+import Logic.Stats.BodyWeightStatsReaderContract;
 import Logic.Workout.WorkoutExerciseReaderContract;
 import Logic.Workout.WorkoutNameReaderContract;
 import android.content.Context;
@@ -19,12 +20,14 @@ public class MainDbHelper extends SQLiteOpenHelper{
 		db.execSQL(ExerciseReaderContract.SQL_CREATE_ENTRIES);
 		db.execSQL(WorkoutNameReaderContract.SQL_CREATE_ENTRIES);
 		db.execSQL(WorkoutExerciseReaderContract.SQL_CREATE_ENTRIES);
+		db.execSQL(BodyWeightStatsReaderContract.SQL_CREATE_ENTRIES);
 	}
 	
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL(ExerciseReaderContract.SQL_DELETE_ENTRIES);
 		db.execSQL(WorkoutNameReaderContract.SQL_DELETE_ENTRIES);
 		db.execSQL(WorkoutExerciseReaderContract.SQL_DELETE_ENTRIES);
+		db.execSQL(BodyWeightStatsReaderContract.SQL_DELETE_ENTRIES);
 		onCreate(db);
 	}
 

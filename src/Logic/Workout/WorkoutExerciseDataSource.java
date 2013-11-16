@@ -21,6 +21,10 @@ public class WorkoutExerciseDataSource {
 		WorkoutExerciseEntry.WORKOUT_ID,
 		WorkoutExerciseEntry.WORKOUT_EXERCISE_ID
   };
+  
+  private String[] exerciseId = {
+		  WorkoutExerciseEntry.WORKOUT_EXERCISE_ID
+  };
 
   public WorkoutExerciseDataSource(Context context) {
     dbHelper = new MainDbHelper(context);
@@ -78,7 +82,7 @@ public class WorkoutExerciseDataSource {
   public ArrayList<Integer> getAllExerciseIds(int workoutId) {
     ArrayList<Integer> ids = new ArrayList<Integer>();
     Cursor cursor = database.query(WorkoutExerciseEntry.TABLE_NAME,
-        allColumns, WorkoutExerciseEntry.WORKOUT_ID + " = " + workoutId, null, null, null, null);
+        exerciseId, WorkoutExerciseEntry.WORKOUT_ID + " = " + workoutId, null, null, null, null);
     cursor.moveToFirst();
     while (!cursor.isAfterLast()) {
       ids.add(cursor.getInt(0));

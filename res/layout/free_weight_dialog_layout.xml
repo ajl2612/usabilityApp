@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/bodyWeightOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="OK" />
+
+    <NumberPicker
+        android:id="@+id/weightNumberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/repNumberPicker"
+        android:layout_toLeftOf="@+id/bodyWeightOk" />
+
+    <NumberPicker
+        android:id="@+id/repNumberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bodyWeightOk"
+        android:layout_marginBottom="140dp"
+        android:layout_toRightOf="@+id/bodyWeightOk" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignRight="@+id/repNumberPicker"
+        android:layout_toRightOf="@+id/bodyWeightOk"
+        android:text="Reps"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/weightNumberPicker"
+        android:layout_alignLeft="@+id/weightNumberPicker"
+        android:layout_alignRight="@+id/weightNumberPicker"
+        android:layout_marginBottom="30dp"
+        android:text="Weight" 
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+</RelativeLayout>
+

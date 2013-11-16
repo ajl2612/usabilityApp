@@ -12,13 +12,16 @@
     <string name="title_activity_workout">WorkoutActivity</string>
     <string name="title_activity_create_workout">CreateWorkout</string>
     <string name="title_activity_review_workout">Review Workout</string>
-	<string name="exercise_type">Type</string>
-	
-	<string-array name="exercise_types">
-	    <item>Aerobic</item>
-	   	<item>Body Weight</item>
-	    <item>Free Weight</item>
-		<item>Stretch</item>
-		<item>Weight Machine</item>
-	</string-array>
+    <string name="exercise_type">Type</string>
+
+    <string-array name="exercise_types">
+        <item>Aerobic</item>
+        <item>Body Weight</item>
+        <item>Free Weight</item>
+        <item>Stretch</item>
+        <item>Weight Machine</item>
+    </string-array>
+
+    <string name="title_activity_stats">StatsActivity</string>
+
 </resources>

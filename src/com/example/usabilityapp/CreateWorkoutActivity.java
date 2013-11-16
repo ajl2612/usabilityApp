@@ -50,13 +50,13 @@ public class CreateWorkoutActivity extends Activity {
 		            if(holder.nameView.isChecked() ){
 		            	holder.nameView.setChecked(false);  
 		            	selectedExercises.remove(selected);
-		            	arg1.setBackgroundColor(0);
+		            	arg1.setBackgroundColor(Color.WHITE);
 		            }else{
 		               	holder.nameView.setChecked(true);
 		            	selectedExercises.add(selected);
 		         	    arg1.setBackgroundColor(Color.RED);
 		            }
-			}}); 
+		}}); 
 	}
 
 	@Override
@@ -79,6 +79,7 @@ public class CreateWorkoutActivity extends Activity {
 			Workout workout = nDatasource.createWorkout(name);
 			
 			for(Exercise e: selectedExercises){
+				System.out.println("WORKOUT: " + e.getId() + " " + e.getName() + " " + e.getType());
 				wDatasource.addExercise(workout.getId(), e.getId());
 			}
 			

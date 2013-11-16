@@ -60,7 +60,15 @@
         </activity>
         <activity
             android:name="com.example.usabilityapp.ReviewWorkoutActivity"
-            android:label="@string/title_activity_review_workout">
+            android:label="@string/title_activity_review_workout" >
+        </activity>
+        <activity
+            android:name="com.example.usabilityapp.StatsActivity"
+            android:label="@string/title_activity_stats"
+            android:parentActivityName="com.example.usabilityapp.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.usabilityapp.MainActivity" />
         </activity>
     </application>
 

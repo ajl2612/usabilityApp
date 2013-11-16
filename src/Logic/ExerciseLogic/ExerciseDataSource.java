@@ -1,6 +1,7 @@
 package Logic.ExerciseLogic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import Logic.ExerciseLogic.ExerciseReaderContract.ExerciseEntry;
 import Logic.Main.MainDbHelper;
@@ -91,8 +92,11 @@ public class ExerciseDataSource {
   }
   
   public ArrayList<Exercise> getAllExercisesByIds(ArrayList<Integer> ids){
+	  System.out.println(ids);
 	    ArrayList<Exercise> exercises = new ArrayList<Exercise>();
 	    for(int i: ids){
+	    	System.out.println("id: " + i);
+	    	System.out.println(getExercise(i).getName());
 	    	exercises.add(getExercise(i));
 	    }
 	    return exercises;

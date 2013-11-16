@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -38,6 +39,7 @@ public class CustomExerciseListAdapter extends BaseAdapter{
 		if(convertView == null){
 			convertView = layoutInflater.inflate(R.layout.exercise_list_row_layout,null);
 			holder = new ViewHolder();
+			holder.iconView = (ImageView)convertView.findViewById(R.id.exerciseIcon); 
 			holder.nameView = (TextView)convertView.findViewById(R.id.nameCol);
 			holder.typeView = (TextView)convertView.findViewById(R.id.typeCol);
 			convertView.setTag(holder);
@@ -46,11 +48,21 @@ public class CustomExerciseListAdapter extends BaseAdapter{
 		}
 		holder.nameView.setText(listData.get(position).getName());
 		holder.typeView.setText(listData.get(position).getType());
+		
+		String type = listData.get(position).getType();
+		if( type.equals("Stretch") || type.equals("Body Weight")){
+			holder.iconView.setImageResource(R.drawable.flex_icon);
+		}
+		else if(type.equals("Aerobic")){
+			holder.iconView.setImageResource(R.drawable.endurance_icon);
+		}
+		
 		return convertView;
 	}
 	
 	static class ViewHolder{
 		TextView idView;
+		ImageView iconView;
 		TextView nameView;
 		TextView typeView;
 	}
