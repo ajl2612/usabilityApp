@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 	}
 	public void gotoStats(View view){
-		Intent intent = new Intent(this, StatsActivity.class);
+		Intent intent = new Intent(this, MainStatsActivity.class);
 		startActivity(intent);
 	}
 	public void gotoWorkout(View view){

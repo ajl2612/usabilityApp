@@ -2,8 +2,8 @@ package com.example.usabilityapp;
 
 import java.util.ArrayList;
 
-import Logic.ExerciseLogic.Exercise;
-import Logic.ExerciseLogic.ExerciseDataSource;
+import Logic.Exercise.Exercise;
+import Logic.Exercise.ExerciseDataSource;
 import Logic.Workout.Workout;
 import Logic.Workout.WorkoutExerciseDataSource;
 import Logic.Workout.WorkoutNameDataSource;

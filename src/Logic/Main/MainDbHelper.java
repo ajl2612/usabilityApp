@@ -1,7 +1,10 @@
 package Logic.Main;
 
-import Logic.ExerciseLogic.ExerciseReaderContract;
+import Logic.Exercise.ExerciseReaderContract;
+import Logic.Stats.AerobicStatsReaderContract;
 import Logic.Stats.BodyWeightStatsReaderContract;
+import Logic.Stats.FreeWeightStatsReaderContract;
+import Logic.Stats.MachineWeightStatsReaderContract;
 import Logic.Workout.WorkoutExerciseReaderContract;
 import Logic.Workout.WorkoutNameReaderContract;
 import android.content.Context;
@@ -21,6 +24,9 @@ public class MainDbHelper extends SQLiteOpenHelper{
 		db.execSQL(WorkoutNameReaderContract.SQL_CREATE_ENTRIES);
 		db.execSQL(WorkoutExerciseReaderContract.SQL_CREATE_ENTRIES);
 		db.execSQL(BodyWeightStatsReaderContract.SQL_CREATE_ENTRIES);
+		db.execSQL(FreeWeightStatsReaderContract.SQL_CREATE_ENTRIES);
+		db.execSQL(MachineWeightStatsReaderContract.SQL_CREATE_ENTRIES);
+		db.execSQL(AerobicStatsReaderContract.SQL_CREATE_ENTRIES);
 	}
 	
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -28,6 +34,9 @@ public class MainDbHelper extends SQLiteOpenHelper{
 		db.execSQL(WorkoutNameReaderContract.SQL_DELETE_ENTRIES);
 		db.execSQL(WorkoutExerciseReaderContract.SQL_DELETE_ENTRIES);
 		db.execSQL(BodyWeightStatsReaderContract.SQL_DELETE_ENTRIES);
+		db.execSQL(FreeWeightStatsReaderContract.SQL_DELETE_ENTRIES);
+		db.execSQL(MachineWeightStatsReaderContract.SQL_DELETE_ENTRIES);
+		db.execSQL(AerobicStatsReaderContract.SQL_DELETE_ENTRIES);
 		onCreate(db);
 	}
 

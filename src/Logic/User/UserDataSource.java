@@ -1,12 +1,12 @@
-package Logic.UserLogic;
+package Logic.User;
 
 import java.util.ArrayList;
 
 
 
 //import Logic.ExerciseLogic.ExerciseDbHelper;
-import Logic.ExerciseLogic.ExerciseReaderContract.ExerciseEntry;
-import Logic.UserLogic.UserReaderContract.UserEntry;
+import Logic.Exercise.ExerciseReaderContract.ExerciseEntry;
+import Logic.User.UserReaderContract.UserEntry;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;

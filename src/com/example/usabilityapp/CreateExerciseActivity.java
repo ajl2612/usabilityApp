@@ -1,7 +1,7 @@
 package com.example.usabilityapp;
 
-import Logic.ExerciseLogic.Exercise;
-import Logic.ExerciseLogic.ExerciseDataSource;
+import Logic.Exercise.Exercise;
+import Logic.Exercise.ExerciseDataSource;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

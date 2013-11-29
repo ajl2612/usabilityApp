@@ -3,7 +3,7 @@ package com.example.usabilityapp;
 
 import java.util.ArrayList;
 
-import Logic.ExerciseLogic.Exercise;
+import Logic.Exercise.Exercise;
 import Logic.Workout.Workout;
 import Logic.Workout.WorkoutExerciseDataSource;
 import Logic.Workout.WorkoutNameDataSource;

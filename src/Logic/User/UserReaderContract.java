@@ -2,7 +2,7 @@
  * @author Andrew Lyne III
  */
 
-package Logic.UserLogic;
+package Logic.User;
 
 import android.provider.BaseColumns;
 

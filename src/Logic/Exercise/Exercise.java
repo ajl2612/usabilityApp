@@ -1,4 +1,4 @@
-package Logic.ExerciseLogic;
+package Logic.Exercise;
 
 public class Exercise {
 	private int id;

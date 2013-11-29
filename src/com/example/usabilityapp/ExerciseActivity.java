@@ -3,8 +3,9 @@ package com.example.usabilityapp;
 import java.util.ArrayList;
 
 import com.example.usabilityapp.R;
-import Logic.ExerciseLogic.Exercise;
-import Logic.ExerciseLogic.ExerciseDataSource;
+
+import Logic.Exercise.Exercise;
+import Logic.Exercise.ExerciseDataSource;
 import Logic.Main.MainDbHelper;
 import Logic.Workout.WorkoutExerciseDataSource;
 import android.os.Bundle;

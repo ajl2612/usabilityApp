@@ -1,9 +1,9 @@
-package Logic.ExerciseLogic;
+package Logic.Exercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import Logic.ExerciseLogic.ExerciseReaderContract.ExerciseEntry;
+import Logic.Exercise.ExerciseReaderContract.ExerciseEntry;
 import Logic.Main.MainDbHelper;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -114,6 +114,11 @@ public class ExerciseDataSource {
     }
     cursor.close();
     return Exercises;
+  }
+  
+  public Cursor getAllExercisesCursor(){
+	  return database.query(ExerciseEntry.TABLE_NAME,
+	        allColumns, null, null, null, null, null);
   }
   
   private Exercise cursorToExercise(Cursor cursor) {

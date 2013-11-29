@@ -5,9 +5,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 
-import Logic.ExerciseLogic.Exercise;
-import Logic.ExerciseLogic.ExerciseDataSource;
+import Logic.Exercise.Exercise;
+import Logic.Exercise.ExerciseDataSource;
 import Logic.Stats.BodyWeightStatsDataSource;
+import Logic.Stats.FreeWeightStatsDataSource;
+import Logic.Stats.MachineWeightStatsDataSource;
 import Logic.Workout.Workout;
 import Logic.Workout.WorkoutExerciseDataSource;
 import Logic.Workout.WorkoutNameDataSource;
@@ -93,6 +95,7 @@ public class ReviewWorkoutActivity extends Activity {
 		}else{
 			chronometer.stop();
 			view.setBackgroundColor(Color.GREEN);
+			
 			timing = false;
 		}
 	}
@@ -162,11 +165,9 @@ public class ReviewWorkoutActivity extends Activity {
          public void onClick(View v) {
             Integer reps = Integer.parseInt(String.valueOf(np.getValue())); 
      		BodyWeightStatsDataSource bwDataSource = new BodyWeightStatsDataSource(getBaseContext());
-     		System.out.println("Adding stat for exercise: " + e.getId());
      		bwDataSource.open();
      		bwDataSource.addStat(e.getId(), reps);
      		bwDataSource.close();
-     		System.out.println("Logged BW Stat");
             d.dismiss();
           }    
          });
@@ -191,18 +192,13 @@ public class ReviewWorkoutActivity extends Activity {
         {
          @Override
          public void onClick(View v) {
-             Integer weight = Integer.parseInt(String.valueOf(wNP.getValue())); 
-             Integer reps = Integer.parseInt(String.valueOf(rNP.getValue())); 
-     		 
-             System.out.println("This is were we would log the exerciseId: " 
-     				 + e.getId() 
-     				 + " in a table with the weight: "
-     				 + weight
-     				 + " and the reps "
-     				 +   reps 
-     				 + " and the workout Id "
-     				 + id );
-             d.dismiss();
+            Integer weight = Integer.parseInt(String.valueOf(wNP.getValue())); 
+            Integer reps = Integer.parseInt(String.valueOf(rNP.getValue())); 
+      		FreeWeightStatsDataSource fwDataSource = new FreeWeightStatsDataSource(getBaseContext());
+      		fwDataSource.open();
+      		fwDataSource.addStat(e.getId(), reps, weight);
+      		fwDataSource.close();
+            d.dismiss();
           }    
          });
 		d.show();
@@ -225,18 +221,13 @@ public class ReviewWorkoutActivity extends Activity {
         {
          @Override
          public void onClick(View v) {
-             Integer weight = Integer.parseInt(String.valueOf(wNP.getValue())); 
-             Integer reps = Integer.parseInt(String.valueOf(rNP.getValue())); 
-     		 
-             System.out.println("This is were we would log the exerciseId: " 
-     				 + e.getId() 
-     				 + " in a table with the weight: "
-     				 + weight
-     				 + " and the reps "
-     				 +   reps 
-     				 + " and the workout Id "
-     				 + id );
-             d.dismiss();
+            Integer weight = Integer.parseInt(String.valueOf(wNP.getValue())); 
+            Integer reps = Integer.parseInt(String.valueOf(rNP.getValue())); 
+       		MachineWeightStatsDataSource mwDataSource = new MachineWeightStatsDataSource(getBaseContext());
+       		mwDataSource.open();
+       		mwDataSource.addStat(e.getId(), reps, weight);
+       		mwDataSource.close();
+            d.dismiss();
           }    
          });
 		d.show();

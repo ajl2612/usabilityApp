@@ -21,7 +21,14 @@
         <item>Stretch</item>
         <item>Weight Machine</item>
     </string-array>
+    <string-array name="exercise_types_stats">
+        <item>Aerobic</item>
+        <item>Body Weight</item>
+        <item>Free Weight</item>
+        <item>Weight Machine</item>
+    </string-array>
 
     <string name="title_activity_stats">StatsActivity</string>
+    <string name="title_activity_main_stats">MainStatsActivity</string>
 
 </resources>

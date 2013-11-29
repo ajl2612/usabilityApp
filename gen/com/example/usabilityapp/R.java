@@ -10,6 +10,7 @@ package com.example.usabilityapp;
 public final class R {
     public static final class array {
         public static final int exercise_types=0x7f060000;
+        public static final int exercise_types_stats=0x7f060001;
     }
     public static final class attr {
     }
@@ -24,34 +25,60 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int delete_icon=0x7f020000;
+        public static final int endurance_icon=0x7f020001;
+        public static final int exercise_icon=0x7f020002;
+        public static final int flex_icon=0x7f020003;
+        public static final int goals_icon=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int main_background=0x7f020006;
+        public static final int schedule_icon=0x7f020007;
+        public static final int settings_icon=0x7f020008;
+        public static final int strength_icon=0x7f020009;
+        public static final int workout_icon=0x7f02000a;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001a;
+        public static final int action_settings=0x7f09002a;
         public static final int active_list_title=0x7f090007;
+        public static final int aerobicOk=0x7f09001c;
+        public static final int bodyWeightOk=0x7f09001e;
+        public static final int button1=0x7f090014;
+        public static final int chronometer=0x7f090016;
         public static final int createButton=0x7f090002;
         public static final int createNameField=0x7f090000;
         public static final int createTypeField=0x7f090001;
         public static final int createWorkoutButton=0x7f090005;
         public static final int custom_exercise_list=0x7f090008;
         public static final int custom_workout_exercise_list=0x7f090004;
-        public static final int custom_workout_list=0x7f090011;
-        public static final int deleteExerciseButton=0x7f090017;
-        public static final int deleteWorkoutButton=0x7f090019;
-        public static final int exercise=0x7f09000a;
+        public static final int custom_workout_list=0x7f090017;
+        public static final int deleteExerciseButton=0x7f090024;
+        public static final int deleteWorkoutButton=0x7f090029;
+        public static final int distanceText=0x7f090019;
+        public static final int exercise=0x7f090011;
         public static final int exerciseButton=0x7f090009;
-        public static final int goals=0x7f09000b;
-        public static final int idCol=0x7f090015;
-        public static final int nameCol=0x7f090016;
-        public static final int review_workout_exercise_list=0x7f09000f;
-        public static final int review_workout_title=0x7f090010;
-        public static final int schedule=0x7f09000c;
-        public static final int settings=0x7f09000d;
-        public static final int typeCol=0x7f090014;
-        public static final int workout=0x7f09000e;
-        public static final int workoutButton=0x7f090012;
-        public static final int workoutExerciseNameCol=0x7f090013;
-        public static final int workoutNameCol=0x7f090018;
+        public static final int exerciseIcon=0x7f09001f;
+        public static final int exerciseMean=0x7f09000b;
+        public static final int exerciseName=0x7f09000c;
+        public static final int exerciseTotal=0x7f09000a;
+        public static final int goals=0x7f090010;
+        public static final int idCol=0x7f090020;
+        public static final int mySimpleXYPlot=0x7f09000d;
+        public static final int nameCol=0x7f090023;
+        public static final int repNumberPicker=0x7f09001d;
+        public static final int review_workout_exercise_list=0x7f090013;
+        public static final int review_workout_title=0x7f090015;
+        public static final int stretchCB=0x7f090026;
+        public static final int stretchOk=0x7f090027;
+        public static final int textView1=0x7f090012;
+        public static final int textView2=0x7f09001a;
+        public static final int timeText=0x7f09001b;
+        public static final int typeCol=0x7f090021;
+        public static final int warningMessage=0x7f09000e;
+        public static final int weightNumberPicker=0x7f090025;
+        public static final int workout=0x7f09000f;
+        public static final int workoutButton=0x7f090018;
+        public static final int workoutExerciseNameCol=0x7f090022;
+        public static final int workoutNameCol=0x7f090028;
         public static final int workoutTitleText=0x7f090006;
         public static final int workout_create_list_title=0x7f090003;
     }
@@ -59,15 +86,21 @@ public final class R {
         public static final int activity_create_exercise=0x7f030000;
         public static final int activity_create_workout=0x7f030001;
         public static final int activity_exercise=0x7f030002;
-        public static final int activity_goals=0x7f030003;
-        public static final int activity_main=0x7f030004;
-        public static final int activity_review_workout=0x7f030005;
-        public static final int activity_schedule=0x7f030006;
-        public static final int activity_settings=0x7f030007;
-        public static final int activity_workout=0x7f030008;
-        public static final int exercise_check_list_row_layout=0x7f030009;
-        public static final int exercise_list_row_layout=0x7f03000a;
-        public static final int workout_list_row_layout=0x7f03000b;
+        public static final int activity_generate_stats=0x7f030003;
+        public static final int activity_goals=0x7f030004;
+        public static final int activity_main=0x7f030005;
+        public static final int activity_main_stats=0x7f030006;
+        public static final int activity_review_workout=0x7f030007;
+        public static final int activity_schedule=0x7f030008;
+        public static final int activity_settings=0x7f030009;
+        public static final int activity_workout=0x7f03000a;
+        public static final int aerobic_dialog_layout=0x7f03000b;
+        public static final int body_weight_dialog_layout=0x7f03000c;
+        public static final int exercise_check_list_row_layout=0x7f03000d;
+        public static final int exercise_list_row_layout=0x7f03000e;
+        public static final int free_weight_dialog_layout=0x7f03000f;
+        public static final int stretch_dialog_layout=0x7f030010;
+        public static final int workout_list_row_layout=0x7f030011;
     }
     public static final class menu {
         public static final int create_exercise=0x7f080000;
@@ -75,9 +108,11 @@ public final class R {
         public static final int exercise=0x7f080002;
         public static final int goals=0x7f080003;
         public static final int main=0x7f080004;
-        public static final int schedule=0x7f080005;
-        public static final int settings=0x7f080006;
-        public static final int workout=0x7f080007;
+        public static final int main_stats=0x7f080005;
+        public static final int schedule=0x7f080006;
+        public static final int settings=0x7f080007;
+        public static final int stats=0x7f080008;
+        public static final int workout=0x7f080009;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -88,9 +123,11 @@ public final class R {
         public static final int title_activity_create_workout=0x7f050009;
         public static final int title_activity_exercise=0x7f050003;
         public static final int title_activity_goals=0x7f050004;
+        public static final int title_activity_main_stats=0x7f05000d;
         public static final int title_activity_review_workout=0x7f05000a;
         public static final int title_activity_schedule=0x7f050005;
         public static final int title_activity_settings=0x7f050006;
+        public static final int title_activity_stats=0x7f05000c;
         public static final int title_activity_workout=0x7f050008;
     }
     public static final class style {

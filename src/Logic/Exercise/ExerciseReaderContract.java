@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Logic.ExerciseLogic;
+package Logic.Exercise;
 
 import android.provider.BaseColumns;
 

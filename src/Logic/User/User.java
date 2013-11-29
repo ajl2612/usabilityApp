@@ -1,4 +1,4 @@
-package Logic.UserLogic;
+package Logic.User;
 
 public class User {
 	private String name;

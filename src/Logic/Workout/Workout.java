@@ -2,7 +2,7 @@ package Logic.Workout;
 
 import java.util.ArrayList;
 
-import Logic.ExerciseLogic.Exercise;
+import Logic.Exercise.Exercise;
 
 public class Workout {
 	int id;
