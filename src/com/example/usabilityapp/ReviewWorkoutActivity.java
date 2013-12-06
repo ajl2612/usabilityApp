@@ -1,27 +1,20 @@
 package com.example.usabilityapp;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
 
 import Logic.Exercise.Exercise;
 import Logic.Exercise.ExerciseDataSource;
 import Logic.Stats.BodyWeightStatsDataSource;
 import Logic.Stats.FreeWeightStatsDataSource;
 import Logic.Stats.MachineWeightStatsDataSource;
-import Logic.Workout.Workout;
 import Logic.Workout.WorkoutExerciseDataSource;
-import Logic.Workout.WorkoutNameDataSource;
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.view.LayoutInflater;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -263,7 +256,7 @@ public class ReviewWorkoutActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.create_workout, menu);
+		// getMenuInflater().inflate(R.menu.create_workout, menu);
 		return true;
 	}
 	

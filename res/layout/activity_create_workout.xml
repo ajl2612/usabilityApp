@@ -31,7 +31,7 @@
 
     <Button
         android:id="@+id/createWorkoutButton"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -45,10 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/workout_create_list_title"
         android:layout_centerHorizontal="true"
-        android:ems="35"
-        android:maxLength="20"
-        android:inputType="textCapSentences"
         android:background="#D9FFFFFF"
-        android:hint="Workout Name" />
+        android:ems="10"
+        android:hint="Workout Name"
+        android:inputType="textCapSentences"
+        android:maxLength="20"
+        android:textSize="25sp" >
+
+        <requestFocus />
+    </EditText>
    
 </RelativeLayout>

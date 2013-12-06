@@ -41,13 +41,22 @@
 	    android:textColor="#ffffff" />
 
 	<com.androidplot.xy.XYPlot
-	    android:id="@+id/mySimpleXYPlot"
+	    android:id="@+id/simpleXYPlotOne"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_below="@+id/exerciseTotal"
 	    android:layout_centerHorizontal="true"
 	    android:layout_marginTop="16dp" />
 
+	<com.androidplot.xy.XYPlot
+	    android:id="@+id/simpleXYPlotTwo"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/exerciseTotal"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="16dp" 
+	   	android:visibility="gone"/>
+	
 	<TextView
 	    android:id="@+id/warningMessage"
 	    android:layout_width="wrap_content"

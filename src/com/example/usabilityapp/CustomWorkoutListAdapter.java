@@ -1,7 +1,6 @@
 package com.example.usabilityapp;
 import java.util.ArrayList;
 
-import Logic.Exercise.Exercise;
 import Logic.Workout.Workout;
 import android.content.Context;
 import android.view.LayoutInflater;

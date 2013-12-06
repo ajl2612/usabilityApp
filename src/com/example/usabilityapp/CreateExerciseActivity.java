@@ -21,7 +21,7 @@ public class CreateExerciseActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.create_exercise, menu);
+		//getMenuInflater().inflate(R.menu.create_exercise, menu);
 		return true;
 	}
 	

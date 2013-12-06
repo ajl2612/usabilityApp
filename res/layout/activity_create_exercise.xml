@@ -33,11 +33,10 @@
 
         <Spinner
             android:id="@+id/createTypeField"
-           	android:layout_width="wrap_content"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/exercise_types"
-            android:prompt="@string/exercise_type"
-            />
+            android:prompt="@string/exercise_type" />
 
         <RelativeLayout
         android:layout_width="match_parent"
@@ -45,7 +44,7 @@
             
 		        <Button
 		            android:id="@+id/createButton"
-		            android:layout_width="wrap_content"
+		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
 		            android:layout_centerHorizontal="true"
 		            android:layout_marginTop="19dp"
